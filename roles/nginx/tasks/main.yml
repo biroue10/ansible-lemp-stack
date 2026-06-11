@@ -1,9 +1,9 @@
     - name: Install Nginx
       dnf:
-        name: nginx
+        name: "{{ nginx_package }}"
         state: present
     - name: Start nginx
       service:
-        name: nginx
+        name: "{{ nginx_service }}"
         state: started
         enabled: true

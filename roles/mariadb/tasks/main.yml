@@ -1,10 +1,10 @@
 - name: Install Mariadb
   dnf:
-    name: mariadb
+    name: "{{ mariadb_package }}"
     state: present
 
 - name: Start Mariadb
   service:
-    name: mariadb
+    name: "{{ mariadb_service }}"
     state: started
     enabled: true

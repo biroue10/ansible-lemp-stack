@@ -2,12 +2,12 @@
 - name: Install PHP and PHP-FPM
   dnf:
     name:
-      - php
-      - php-fpm
+      - "{{ php_package }}"
+      - "{{ php_fpm_package }}"
     state: present
 
 - name: Start PHP-FPM
   service:
-    name: php-fpm
+    name: "{{ php_fpm_service }}"
     state: started
     enabled: true
