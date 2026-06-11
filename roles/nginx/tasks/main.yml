@@ -7,3 +7,8 @@
         name: "{{ nginx_service }}"
         state: started
         enabled: true
+    - name: Copy nginx config
+      copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+      notify: restart nginx 
